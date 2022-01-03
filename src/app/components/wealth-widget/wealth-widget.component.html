@@ -1,0 +1,27 @@
+<div *ngIf="wealth$ | async as wealth">
+  <app-wealth-summary [wealthSummary]="wealth.wealthSummary">
+  </app-wealth-summary>
+  <div class="d-flex flex-row justify-content-between mt-3 mb-4">
+    <app-weekly-wealth-chart
+      *ngFor="let w of wealth.weeklyWealths"
+      [weeklyWealth]="w"
+    ></app-weekly-wealth-chart>
+  </div>
+  <div class="d-flex justify-content-between mb-4">
+    <div>
+      <i class="bi bi-chevron-left"></i>
+      <span class="ml-3 mr-3 small font-weight-bold"> Today </span>
+      <i class="bi bi-chevron-right"></i>
+    </div>
+    <div>
+      <span class="small font-weight-bold mr-3"> Forecasted balance </span>
+      <span class="font-weight-bold"
+        >{{ forecastedBalance$ | async | number: "1.0-0" }} kr.</span
+      >
+    </div>
+  </div>
+  <button type="button" class="btn btn-light">
+    <i class="bi bi-plus-lg red-button"></i>
+    Adjust prerequisites
+  </button>
+</div>

@@ -1,0 +1,22 @@
+<div class="d-flex flex-row">
+  <div class="mr-5">
+    <div class="d-flex flex-column">
+      <span class="small mb-2">
+        Inbound ({{ wealthSummary.inbound.count }})
+      </span>
+      <span class="numbers green">{{
+        wealthSummary.inbound.value | number: "1.0-0"
+      }}</span>
+    </div>
+  </div>
+  <div class="mr-5">
+    <div class="d-flex flex-column">
+      <span class="small mb-2">
+        Outbound ({{ wealthSummary.outbound.count }})
+      </span>
+      <span class="numbers red">{{
+        wealthSummary.outbound.value | number: "1.0-0"
+      }}</span>
+    </div>
+  </div>
+</div>

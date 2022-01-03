@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./widget-header.component.scss'],
 })
 export class WidgetHeaderComponent implements OnInit {
-  @Input() public name: string = '';
+  @Input() public name: string;
 
   ngOnInit(): void {}
 }

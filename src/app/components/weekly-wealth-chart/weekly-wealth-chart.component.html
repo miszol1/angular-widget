@@ -1,0 +1,19 @@
+<div class="d-flex">
+  <div
+    class="bar"
+    *ngFor="let w of weeklyWealth.wealths; let index = index"
+    [ngClass]="{
+      green: w > 0,
+      grey: w == 0,
+      red: w < 0,
+      'negative-value': !isLastValuePositive(index)
+    }"
+  ></div>
+</div>
+<span class="d-flex justify-content-center date">
+  {{
+    (weeklyWealth.startDate | date: "d.LLL") +
+      " - " +
+      (weeklyWealth.endDate | date: "d.LLL")
+  }}
+</span>

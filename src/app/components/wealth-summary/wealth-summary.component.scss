@@ -1,0 +1,14 @@
+:host {
+  .numbers {
+    font-size: 1.5rem;
+    font-weight: 700;
+
+    &.green {
+      color: #14ac8a;
+    }
+
+    &.red {
+      color: #dc1e35;
+    }
+  }
+}
