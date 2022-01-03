@@ -1,14 +1,24 @@
-<div class="d-flex">
+<div class="d-flex bar-chart">
   <div
+    [@simpleFadeAnimation]="
+      isLastValuePositive(index) ? 'positive' : 'negative'
+    "
     class="bar"
-    *ngFor="let w of weeklyWealth.wealths; let index = index"
+    *ngFor="let w of weeklyWealth.wealths; let index = index; trackBy: trackBar"
     [ngClass]="{
       green: w > 0,
       grey: w == 0,
-      red: w < 0,
-      'negative-value': !isLastValuePositive(index)
+      red: w < 0
     }"
-  ></div>
+  >
+    <i
+      *ngIf="weeklyWealth.warningIndex == index"
+      class="bi bi-exclamation-circle-fill circle-tooltip"
+      ngbTooltip="Tooltip text"
+      triggers="click:blur"
+    >
+    </i>
+  </div>
 </div>
 <span class="d-flex justify-content-center date">
   {{

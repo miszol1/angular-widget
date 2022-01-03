@@ -19,6 +19,10 @@ export class WealthWidgetComponent implements OnInit {
     this.forecastedBalance$ = this.getForecastedBalance();
   }
 
+  public randomizeValues(): void {
+    this.wealthService.randomizeValues();
+  }
+
   private getForecastedBalance(): Observable<number> {
     return this.wealthService.getForecastedBalance();
   }

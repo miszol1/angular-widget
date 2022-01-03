@@ -20,6 +20,7 @@ const weeklyWealths: WeeklyWealth[] = [
     startDate: new Date('2021-06-14'),
     endDate: new Date('2021-06-20'),
     wealths: [1, 2, -3, 2, -3, 0, 0],
+    warningIndex: 6,
   },
   {
     startDate: new Date('2021-06-21'),

@@ -16,4 +16,26 @@ export class WealthService {
   public getForecastedBalance(): Observable<number> {
     return of(1200000);
   }
+
+  public randomizeValues(): void {
+    wealthMock.wealthSummary.inbound.value = this.getRandomValue(
+      1000000,
+      2500000
+    );
+    wealthMock.wealthSummary.outbound.value = this.getRandomValue(
+      1000000,
+      2500000
+    );
+
+    wealthMock.weeklyWealths.forEach((week) => {
+      week.wealths = week.wealths.map((value) => {
+        if (value === 0) return value;
+        return this.getRandomValue(-5, 5);
+      });
+    });
+  }
+
+  private getRandomValue(min: number, max: number) {
+    return Math.random() * (max - min) + min;
+  }
 }

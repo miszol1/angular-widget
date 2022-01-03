@@ -1,29 +1,41 @@
 :host {
-  .bar {
-    height: 4rem;
-    width: 0.6rem;
-    border-radius: 0.3125rem;
-    margin: 0.1875rem;
-    padding: 0.3125rem;
+  .bar-chart {
+    height: 5rem;
 
-    &.green {
-      background-color: #14ac8a;
-    }
+    .bar {
+      height: 4rem;
+      width: 0.6rem;
+      border-radius: 0.3125rem;
+      margin: 0.1875rem;
+      padding: 0.3125rem;
 
-    &.red {
-      background-color: #dc1e35;
-    }
+      &.green {
+        background-color: #14ac8a;
+      }
 
-    &.grey {
-      background-color: #c4c4c4;
-    }
+      &.red {
+        background-color: #dc1e35;
+      }
 
-    &.negative-value {
-      margin-top: 0.625rem;
+      &.grey {
+        background-color: #c4c4c4;
+      }
+
+      &.negative-value {
+        margin-top: 0.625rem;
+      }
     }
   }
-
   .date {
     font-size: 0.8125rem;
+  }
+
+  .circle-tooltip {
+    color: #dc1e35;
+    position: absolute;
+    margin-top: -2rem;
+    margin-left: -0.5rem;
+
+    cursor: pointer;
   }
 }
