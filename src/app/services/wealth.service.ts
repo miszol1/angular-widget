@@ -23,8 +23,8 @@ export class WealthService {
       2500000
     );
     wealthMock.wealthSummary.outbound.value = this.getRandomValue(
-      1000000,
-      2500000
+      -1000000,
+      -2500000
     );
 
     wealthMock.weeklyWealths.forEach((week) => {
